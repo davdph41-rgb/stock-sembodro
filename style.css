@@ -1,0 +1,467 @@
+/* =========================
+   RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   BODY
+========================= */
+body {
+    font-family: Arial, sans-serif;
+    background: #0b0b0f;
+    color: white;
+    min-height: 100vh;
+}
+
+/* =========================
+   APP
+========================= */
+.app {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* =========================
+   HEADER
+========================= */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.small-title {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #888;
+}
+
+.header h1 {
+    font-size: 28px;
+    margin-top: 5px;
+}
+
+.reset-btn {
+    background: #1b1b22;
+    border: 1px solid #333;
+    color: white;
+    padding: 9px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* =========================
+   TOTAL CARD
+========================= */
+.total-card {
+    background: #15151b;
+    border: 1px solid #26262e;
+    border-radius: 18px;
+    padding: 22px;
+    margin-bottom: 30px;
+}
+
+.total-card p {
+    color: #888;
+    font-size: 14px;
+}
+
+.total-card h2 {
+    font-size: 42px;
+    margin-top: 8px;
+}
+
+.total-card small {
+    font-size: 16px;
+    color: #888;
+}
+
+/* =========================
+   SECTION TITLE
+========================= */
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.section-title h2 {
+    font-size: 19px;
+}
+
+.section-title span {
+    color: #777;
+    font-size: 13px;
+}
+
+/* =========================
+   STOCK ITEM
+========================= */
+.stock-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #15151b;
+    border: 1px solid #24242c;
+    border-radius: 14px;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.menu-name {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.menu-stock {
+    color: #888;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+/* =========================
+   ADD MENU
+========================= */
+.add-section {
+    margin-top: 35px;
+}
+
+.add-section h2 {
+    font-size: 19px;
+    margin-bottom: 15px;
+}
+
+.add-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.add-form input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid #292930;
+    background: #15151b;
+    color: white;
+    outline: none;
+}
+
+.add-form button {
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: white;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+    text-align: center;
+    color: #555;
+    font-size: 12px;
+    margin-top: 40px;
+    padding-bottom: 20px;
+}
+
+/* ========================================
+   FORM TRANSAKSI & RIWAYAT
+======================================== */
+.history-section {
+    margin-top: 35px;
+}
+
+.history-section h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.transaction-description {
+    color: #888;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    font-size: 14px;
+    color: #ccc;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid #292930;
+    background: #15151b;
+    color: white;
+    font-size: 14px;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #777;
+}
+
+.save-transaction-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: white;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.save-transaction-btn:active {
+    transform: scale(0.98);
+}
+
+/* ========================================
+   RIWAYAT TRANSAKSI
+======================================== */
+.history-item {
+    background: #15151b;
+    border: 1px solid #292930;
+    border-radius: 12px;
+    padding: 15px;
+    margin-top: 10px;
+}
+
+.history-item h3 {
+    font-size: 15px;
+    margin-bottom: 7px;
+}
+
+.history-item p {
+    color: #aaa;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.history-item .history-amount {
+    color: #ff8585;
+    font-weight: bold;
+}
+
+.history-item .history-time {
+    color: #777;
+    font-size: 11px;
+}
+
+/* ========================================
+   KARTU RINCIAN STOK
+======================================== */
+.stock-detail-card {
+    display: block;
+    padding: 20px;
+    margin-bottom: 16px;
+    background: #15151b;
+    border: 1px solid #292930;
+    border-radius: 16px;
+}
+
+.stock-detail-card .menu-name {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.current-stock-label {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: #888;
+}
+
+.current-stock {
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 6px;
+    margin-bottom: 20px;
+}
+
+.stock-details {
+    border-top: 1px solid #292930;
+    padding-top: 12px;
+    margin-bottom: 18px;
+}
+
+.stock-detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    font-size: 14px;
+}
+
+.stock-detail-row span:first-child {
+    color: #999;
+}
+
+.stock-detail-row span:last-child {
+    font-weight: bold;
+}
+
+.card-transaction-btn {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #333;
+    border-radius: 10px;
+    background: #222229;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.card-transaction-btn:active {
+    transform: scale(0.98);
+}
+
+.card-edit-btn {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #333;
+    border-radius: 10px;
+    background: transparent;
+    color: #ccc;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.card-edit-btn:active {
+    transform: scale(0.98);
+}
+
+.cancel-transaction-btn {
+    width: 100%;
+    padding: 11px;
+    margin-top: 14px;
+    border: 1px solid #713737;
+    border-radius: 9px;
+    background: #281719;
+    color: #ffaaaa;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cancel-transaction-btn:active {
+    transform: scale(0.98);
+}
+
+/* ========================================
+   LAPORAN STOK
+======================================== */
+.report-section {
+    margin-top: 35px;
+}
+
+.report-section h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.report-card {
+    padding: 18px;
+    background: #15151b;
+    border: 1px solid #292930;
+    border-radius: 14px;
+    margin-top: 20px;
+}
+
+.report-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid #292930;
+    font-size: 14px;
+}
+
+.report-row span {
+    color: #aaa;
+}
+
+.report-row strong {
+    text-align: right;
+}
+
+.report-total {
+    border-bottom: none;
+    padding-top: 18px;
+    font-size: 16px;
+}
+
+.export-btn {
+    width: 100%;
+    padding: 15px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 10px;
+    background: white;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* ========================================
+   MODAL TRANSAKSI (POP-UP)
+======================================== */
+.modal {
+    display: none; /* Tersembunyi secara default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    overflow-y: auto;
+}
+
+.modal-content {
+    background: #0b0b0f;
+    margin: 10% auto;
+    padding: 25px;
+    border: 1px solid #292930;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+.close-modal {
+    color: #aaa;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close-modal:hover {
+    color: white;
+}

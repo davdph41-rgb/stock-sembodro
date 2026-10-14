@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock App</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0b0b0f">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Stock App">
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+</head>
+<body>
+
+    <div class="app">
+        <!-- =========================
+             HEADER
+        ========================== -->
+        <header class="header">
+            <div>
+                <p class="small-title">STOCK MANAGEMENT</p>
+                <h1>Stock App</h1>
+            </div>
+            <button class="reset-btn" onclick="resetStock()">Reset</button>
+        </header>
+
+        <!-- =========================
+             TOTAL STOK
+        ========================== -->
+        <section class="total-card">
+            <p>Total Stok Saat Ini</p>
+            <h2>
+                <span id="totalStock">0</span>
+                <small>pcs</small>
+            </h2>
+        </section>
+
+        <!-- =========================
+             DAFTAR MENU
+        ========================== -->
+        <section class="stock-section">
+            <div class="section-title">
+                <h2>Daftar Menu</h2>
+                <span id="menuCount">0 Menu</span>
+            </div>
+            <div id="stockList"></div>
+        </section>
+
+        <!-- =========================
+             TAMBAH MENU
+        ========================== -->
+        <section class="add-section">
+            <h2>Tambah Menu</h2>
+            <div class="add-form">
+                <input type="text" id="menuName" placeholder="Nama menu">
+                <input type="number" id="menuStock" placeholder="Stok awal" min="0">
+                <button onclick="addMenu()">Tambah Menu</button>
+            </div>
+        </section>
+
+        <!-- =========================
+             MODAL TRANSAKSI (POP-UP)
+        ========================== -->
+        <div id="transactionModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal" onclick="closeTransactionModal()">&times;</span>
+                <h2>Tambah Transaksi</h2>
+                <p class="transaction-description">Catat pengurangan stok berdasarkan jenis transaksi.</p>
+
+                <form id="transactionForm">
+                    <div class="form-group">
+                        <label for="transactionMenu">Pilih Menu</label>
+                        <select id="transactionMenu" required></select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="transactionType">Jenis Transaksi</label>
+                        <select id="transactionType" required>
+                            <option value="reservasi">Reservasi</option>
+                            <option value="sesi1">Sesi 1</option>
+                            <option value="sesi2">Sesi 2</option>
+                            <option value="manual">Penjualan Manual</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="transactionAmount">Jumlah Pengurangan</label>
+                        <input type="number" id="transactionAmount" min="1" step="1" placeholder="Masukkan jumlah" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="transactionNote">Catatan (Opsional)</label>
+                        <input type="text" id="transactionNote" placeholder="Contoh: Reservasi pelanggan">
+                    </div>
+
+                    <button type="submit" class="save-transaction-btn">Simpan Transaksi</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- =========================
+             RIWAYAT TRANSAKSI
+        ========================== -->
+        <section class="history-section">
+            <h2>Riwayat Transaksi</h2>
+            <div id="transactionHistory">
+                <p>Belum ada transaksi.</p>
+            </div>
+        </section>
+
+        <!-- =========================
+             LAPORAN STOK HARIAN
+        ========================== -->
+        <section class="report-section">
+            <h2>Laporan Stok Harian</h2>
+            <p class="transaction-description">Pilih tanggal untuk melihat ringkasan transaksi.</p>
+
+            <div class="form-group">
+                <label for="reportDate">Tanggal Laporan</label>
+                <input type="date" id="reportDate" required>
+            </div>
+
+            <div class="report-card">
+                <div class="report-row">
+                    <span>Jumlah Menu</span>
+                    <strong id="reportMenuCount">0</strong>
+                </div>
+                <div class="report-row">
+                    <span>Total Stok Awal</span>
+                    <strong id="reportOpeningStock">0 pcs</strong>
+                </div>
+                <div class="report-row">
+                    <span>Reservasi</span>
+                    <strong id="reportReservation">0 pcs</strong>
+                </div>
+                <div class="report-row">
+                    <span>Sesi 1</span>
+                    <strong id="reportSession1">0 pcs</strong>
+                </div>
+                <div class="report-row">
+                    <span>Sesi 2</span>
+                    <strong id="reportSession2">0 pcs</strong>
+                </div>
+                <div class="report-row">
+                    <span>Penjualan Manual</span>
+                    <strong id="reportManual">0 pcs</strong>
+                </div>
+                <div class="report-row report-total">
+                    <span>Stok Saat Ini</span>
+                    <strong id="reportClosingStock">0 pcs</strong>
+                </div>
+            </div>
+
+            <button type="button" class="export-btn" id="exportReportBtn">Unduh Laporan CSV</button>
+        </section>
+
+        <!-- =========================
+             FOOTER
+        ========================== -->
+        <footer>
+            Stock App • Version 2.0
+        </footer>
+    </div>
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+    <script src="script.js"></script>
+</body>
+</html>
